@@ -14,9 +14,11 @@ public class HandsOverlay implements DialOverlay {
 
     private final Drawable mHour;
     private final Drawable mMinute;
+    private final Drawable mSecond;
     private final boolean mUseLargeFace;
     private float mHourRot;
     private float mMinRot;
+    private float mSecRot;
     private boolean mShowSeconds;
     private float scale;
 
@@ -27,14 +29,17 @@ public class HandsOverlay implements DialOverlay {
 
         mHour = null;
         mMinute = null;
+        mSecond= null;
     }
 
-    public HandsOverlay(Drawable hourHand, Drawable minuteHand) {
+    public HandsOverlay(Drawable hourHand, Drawable minuteHand,Drawable secHand) {
         mUseLargeFace = false;
 
         mHour = hourHand;
         mMinute = minuteHand;
+        mSecond=secHand;
     }
+
     public HandsOverlay withScale(float scale){
         this.scale = scale;
         return this;
@@ -47,6 +52,7 @@ public class HandsOverlay implements DialOverlay {
 
         mHour = r.getDrawable(hourHandRes);
         mMinute = r.getDrawable(minuteHandRes);
+        mSecond=r.getDrawable(minuteHandRes);
     }
 
     public static float getHourHandAngle(int h, int m) {
@@ -71,6 +77,14 @@ public class HandsOverlay implements DialOverlay {
             drawMinutes(canvas, cX, cY, w, h, calendar, sizeChanged);
         else
             drawHours(canvas, cX, cY, w, h, calendar, sizeChanged);
+        canvas.restore();
+
+
+        canvas.save();
+        if (!CustomAnalogClock.hourOnTop)
+            drawSec(canvas, cX, cY, w, h, calendar, sizeChanged);
+        else
+            drawSec(canvas, cX, cY, w, h, calendar, sizeChanged);
         canvas.restore();
     }
 
@@ -98,6 +112,20 @@ public class HandsOverlay implements DialOverlay {
         mHour.draw(canvas);
     }
 
+    private void drawSec(Canvas canvas, int cX, int cY, int w, int h, Calendar calendar,
+                           boolean sizeChanged) {
+        canvas.rotate(mSecRot, cX, cY);
+
+        if (sizeChanged) {
+            w = (int) (mSecond.getIntrinsicWidth()* scale);
+            h = (int) (mSecond.getIntrinsicHeight()* scale);
+            mSecond.setBounds(cX - (w / 2), cY - (h / 2), cX + (w / 2), cY + (h / 2));
+        }
+        mSecond.draw(canvas);
+    }
+
+
+
     public void setShowSeconds(boolean showSeconds) {
         mShowSeconds = showSeconds;
     }
@@ -110,6 +138,7 @@ public class HandsOverlay implements DialOverlay {
 
         mHourRot = getHourHandAngle(h, m);
         mMinRot = (m / 60.0f) * 360 + (mShowSeconds ? ((s / 60.0f) * 360 / 60.0f) : 0);
+        mSecRot=(s* 6.0f);
     }
 
 }
