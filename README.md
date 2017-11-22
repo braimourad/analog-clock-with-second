@@ -1,8 +1,7 @@
 # Custom Analog Clock View
 
-[![JitPack](https://jitpack.io/v/rosenpin/custom-analog-clock-view.svg)](https://jitpack.io/#rosenpin/custom-analog-clock-view)
-[![Download](https://api.bintray.com/packages/rosenpin/maven/custom-analog-clock-view/images/download.svg) ](https://bintray.com/rosenpin/maven/custom-analog-clock-view/_latestVersion)
-<a target="_blank" href="https://www.paypal.me/rosenfeldtomer" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a>
+[![](https://jitpack.io/v/makbn/analog-clock-with-second.svg)](https://jitpack.io/#makbn/analog-clock-with-second)
+
 
 Based on [rosenpin/custom-analog-clock-view](https://github.com/rosenpin/custom-analog-clock-view)
 
