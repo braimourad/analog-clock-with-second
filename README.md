@@ -13,11 +13,11 @@ Add it in your root build.gradle at the end of repositories:
 
 ```` gradle
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    repositories {
+	...
+	maven { url 'https://jitpack.io' }
+    }
+}
 ````
 
 Add this to your app build.gradle file
@@ -32,11 +32,12 @@ dependencies {
 ## How to use
 In your layout:
 ```xml
-<com.tomerrosenfeld.customanalogclockview.CustomAnalogClock
+<io.github.makbn.customanalogclockview.CustomAnalogClock
         android:id="@+id/analog_clock"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" 
-        app:default_watchface="true" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 ````
 
 In your activity:
