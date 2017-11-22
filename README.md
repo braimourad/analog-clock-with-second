@@ -4,15 +4,28 @@
 [![Download](https://api.bintray.com/packages/rosenpin/maven/custom-analog-clock-view/images/download.svg) ](https://bintray.com/rosenpin/maven/custom-analog-clock-view/_latestVersion)
 <a target="_blank" href="https://www.paypal.me/rosenfeldtomer" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" /></a>
 
-Based on [xxv](https://github.com/xxv)/[24AnalogWidget](https://github.com/xxv/24hAnalogWidget)
+Based on [rosenpin/custom-analog-clock-view](https://github.com/rosenpin/custom-analog-clock-view)
 
 This is a super easy to implement and highly customizable analog clock library
 
 ## Dependency
+
+Add it in your root build.gradle at the end of repositories:
+
+```` gradle
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+````
+
 Add this to your app build.gradle file
+    
 ```` gradle
 dependencies {
-    compile 'com.tomerrosenfeld.customanalogclockview:custom-analog-clock-view:1.1'
+    compile 'com.github.makbn:analog-clock-with-second:-SNAPSHOT'
 }
 ````
 
