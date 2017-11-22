@@ -45,11 +45,6 @@ CustomAnalogClock customAnalogClock = (CustomAnalogClock) findViewById(R.id.anal
 customAnalogClock.setAutoUpdate(true);
 ````
 
-#### And you're basically done!
-
- Default clock 
-<img src="http://i.imgur.com/mb08zMF.png" alt="Drawing" width="400" />
-
 # Customization
 To adjust the size of the clock
 ```java 
