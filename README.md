@@ -3,7 +3,6 @@
 [![](https://jitpack.io/v/makbn/analog-clock-with-second.svg)](https://jitpack.io/#makbn/analog-clock-with-second)
 
 
-Based on [rosenpin/custom-analog-clock-view](https://github.com/rosenpin/custom-analog-clock-view)
 
 This is a super easy to implement and highly customizable analog clock library
 
@@ -95,4 +94,9 @@ Using this library I was easily able to create these analog clock widgets:
 
 ## Licensing
 Custom Analog Clock View is licensed under the [GNU v3 Public License.](LICENSE)
+
+## Origin
+
+Based on [rosenpin/custom-analog-clock-view](https://github.com/rosenpin/custom-analog-clock-view)
+
 
