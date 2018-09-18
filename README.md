@@ -23,7 +23,7 @@ Add this to your app build.gradle file
     
 ```` gradle
 dependencies {
-    compile 'com.github.makbn:analog-clock-with-second:-SNAPSHOT'
+     implementation 'com.github.makbn:analog-clock-with-second:master'
 }
 ````
 
